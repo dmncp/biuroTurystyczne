@@ -1,0 +1,28 @@
+<div *ngIf="trip" id="trip" [ngStyle]="{'background-color': divColor()}">
+  <img class="img" src="{{trip.url}}">
+  <div id="sec_col">
+    <h2 id="title">{{trip.tripTitle | uppercase}}</h2>
+    <h3 id="destination">{{trip.destination | uppercase}}</h3>
+  </div>
+  <div id="third_col">
+    <p id="date">
+      {{trip.startDate}} - {{trip.endDate}}
+    </p>
+    <ng-container *ngIf="trip.places > trip.reservedPlaces; else noPlaces">
+      <p id="places">
+        Wolnych miejsc: <span>{{trip.places - trip.reservedPlaces}}/{{trip.places}}</span>
+      </p>
+      <span id="availability" *ngIf="trip.places - trip.reservedPlaces <= 3">Kończy się dostępność!</span>
+    </ng-container>
+
+    <ng-template #noPlaces>
+      <span id="noPlace">Brak wolnych miejsc!</span>
+    </ng-template>
+
+    <p id="price">Cena za osobę: <span>{{trip.price}} PLN</span></p>
+    <div id="buttons">
+      <app-see-offer-btn [trip]="trip"></app-see-offer-btn>
+      <app-reserve-button [trip]="trip"></app-reserve-button>
+    </div>
+  </div>
+</div>

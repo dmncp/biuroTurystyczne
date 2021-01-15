@@ -1,0 +1,48 @@
+#container{
+  height: 90px;
+  background-color: darkgreen;
+}
+
+#desktopMenu{
+  list-style: none;
+  display: flex;
+}
+li{
+  margin: 0 auto;
+  height: 90px;
+  line-height: 90px;
+  font-size: 25px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+a:hover, #userDesc:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.fa-user{
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
+p{
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+#userDesc{
+  margin-right: 20px;
+  transition: transform 0.5s ease;
+}
+
+@media(max-width:800px) {
+  #desktopView {
+    display: none;
+  }
+}

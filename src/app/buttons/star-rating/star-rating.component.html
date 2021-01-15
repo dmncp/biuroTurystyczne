@@ -1,0 +1,6 @@
+<div id="starList" *ngIf="rated === false">
+  <div id="star" *ngFor="let i of [1, 2, 3, 4, 5]" (click)="rate(i)" [ngStyle]="{'background': changeColor(i, 1), 'cursor': changeCursor()}"><span>{{i}}</span></div>
+</div>
+<div id="covered-stars" *ngIf="rated === true">
+  <div id="cover-star" *ngFor="let i of [1, 2, 3, 4, 5]" [ngStyle]="{'background-color': changeColor(i, 2)}"><span>{{i}}</span></div>
+</div>

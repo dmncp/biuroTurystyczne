@@ -1,0 +1,14 @@
+<form [formGroup]="modelForm">
+  <h2>Zaloguj się</h2>
+  <ng-container>
+    <label for="email">Adres email:</label>
+    <input type="email" id="email" name="email" required formControlName="email" [(ngModel)]="email">
+  </ng-container>
+  <ng-container>
+    <label for="password">Hasło:</label>
+    <input [(ngModel)]="password" formControlName="password" type="password" id="password" name="password" required>
+  </ng-container>
+  <button type="submit" [disabled]="!modelForm.valid" (click)="save()">Zaloguj</button>
+  <a (click)="navigateToRegistration()" id="registration">Zarejestruj się</a>
+</form>
+

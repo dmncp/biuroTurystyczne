@@ -1,0 +1,43 @@
+#container{
+  width: 90vw;
+  background-color: whitesmoke;
+  margin: 0 auto 20px auto;
+  padding-top: 20px;
+}
+img{
+  display: block;
+  margin: 20px auto;
+  width: 50%;
+  box-shadow: 5px 5px 5px gray;
+}
+p, h2, h3, #description{
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+h2{
+  font-size: 35px;
+}
+h3{
+  font-size: 30px;
+}
+#date{
+  font-size: 20px;
+  font-weight: bold;
+}
+#description{
+  font-size: 25px;
+  padding: 50px 20px;
+  width: 90%;
+  background-color: white;
+  box-shadow: 5px 5px 5px gray;
+  margin: 50px auto;
+}
+#offer-details{
+  background-color: #7d7dde;
+}
+#places, #price{
+  font-size: 20px;
+  font-weight: bold;
+}
+

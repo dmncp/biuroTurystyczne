@@ -1,0 +1,26 @@
+<form [formGroup]="modelForm" id="container" (ngSubmit)="onSubmit(modelForm)">
+  <div id="filterOption">
+    <div class="element">
+      <label for="localization">Lokalizacja:</label>
+      <input id="localization" name="destination" formControlName="destination">
+    </div>
+    <div class="element">
+      <label for="date">Data: </label>
+      <input id="date" placeholder="Data rozpoczęcia:" type="date" name="startDate" formControlName="startDate">
+      <input placeholder="Data zakończenia:" type="date" name="endDate" formControlName="endDate">
+    </div>
+    <div class="element">
+      <label for="minPrice">Cena:</label>
+      <input id="minPrice" type="number" name="minPrice" formControlName="minPrice" placeholder="Cena minimalna">
+      <input id="maxPrice" type="number" name="maxPrice" formControlName="maxPrice" placeholder="Cena maksymalna">
+    </div>
+    <div class="element">
+      <label for="minRate">Ocena: </label>
+      <input id="minRate" type="number" min="0" max="5" name="minRate" formControlName="minRate" placeholder="min">
+      <input id="maxRate" type="number" min="0" max="5" name="maxRate" formControlName="maxRate" placeholder="max">
+    </div>
+    <button type="submit" id="filterBtn" [disabled]="!modelForm.valid">Filtruj</button>
+    <p *ngIf="!modelForm.valid">Wypełnij poprawnie filtry.</p>
+  </div>
+</form>
+

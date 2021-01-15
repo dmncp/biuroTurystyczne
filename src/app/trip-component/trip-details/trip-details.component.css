@@ -1,0 +1,106 @@
+#trip{
+  width: 25vw;
+  margin: 30px 10px 20px 10px;
+  border: 2px black solid;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.img{
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  display: block;
+  margin: 5px auto;
+}
+#title, #destination{
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+}
+
+#destination{
+  border-bottom: 1px grey solid;
+  width: 95%;
+  bottom: 7%;
+}
+
+#price, #date, #places{
+  padding: 0 5px;
+  text-align: center;
+}
+#date{
+  font-size: 15px;
+}
+span{
+  font-weight: 600;
+}
+#noPlace, #availability{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #d70000;
+}
+#delete{
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  background-color: red;
+  position: relative;
+  top: 111%;
+  border: none;
+  font-size: 30px;
+  line-height: 35px;
+  color: whitesmoke;
+  font-weight: 400;
+}
+
+#delete:hover{
+  cursor: pointer;
+}
+#delete:focus{
+  outline: none;
+}
+
+
+@media (max-width: 1200px) {
+  #trip{
+    width: 40vw;
+  }
+  .img{
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+@media (max-width: 900px) {
+  #trip{
+    width: 70vw;
+    margin: 20px auto;
+  }
+  .img{
+    width: 35vw;
+    height: 35vw;
+  }
+}
+@media (max-width: 700px) {
+  #trip{
+    width: 70vw;
+    margin: 20px auto;
+  }
+  .img{
+    width: 46vw;
+    height: 46vw;
+  }
+}
+@media (max-width: 425px) {
+  #trip{
+    width: 90vw;
+  }
+  .img{
+    width: 70vw;
+    height: 70vw;
+  }
+}

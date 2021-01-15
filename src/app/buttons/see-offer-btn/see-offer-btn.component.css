@@ -1,0 +1,22 @@
+#offer-details {
+  height: 50px;
+  width: 130px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  background-color: darkred;
+}
+div{
+  width: 130px;
+  margin: 0 auto;
+}
+
+#offer-details:focus{
+  outline: none;
+}
+#offer-details:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform ease 0.5s;
+}

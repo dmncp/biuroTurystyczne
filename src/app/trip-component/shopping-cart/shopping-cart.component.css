@@ -1,0 +1,66 @@
+*{
+  color: black;
+}
+table, th, td{
+  border: 1px solid black;
+  padding: 10px;
+  border-collapse: collapse;
+}
+table{
+  position: relative;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+h2{
+  font-weight: 600;
+  font-size: 25px;
+  text-align: center;
+  color: black;
+  position: relative;
+}
+#container{
+  margin: 50px auto 10px auto;
+  width: 80vw;
+  position: relative;
+  padding-bottom: 20px;
+  background-color: whitesmoke;
+}
+.sum{
+  font-weight: 600;
+}
+button{
+  position: absolute;
+  width: 70px;
+  background-color: darkblue;
+  color: white;
+  border-radius: 10px;
+  left: 100%;
+  bottom: 10%;
+  transform: translateX(-70px);
+}
+button:focus{
+  outline: none;
+}
+#main{
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+}
+
+@media(max-width:490px){
+  button{
+    left: 76%;
+  }
+}
+@media(max-width:390px){
+  button{
+    left: 70%;
+  }
+}
+@media(max-width:280px){
+  button{
+    left: 65%;
+  }
+}

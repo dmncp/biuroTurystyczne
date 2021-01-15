@@ -1,0 +1,40 @@
+#reserve, #cancel{
+  height: 50px;
+  width: 130px;
+  position: relative;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 5px;
+}
+#buttons-container{
+  width: 130px;
+  margin: 0 auto;
+}
+#cancel{
+  background-color: blue;
+  top: 70%;
+}
+#reserve{
+  background-color: green;
+  bottom: 20%;
+}
+
+#cancel:focus, #reserve:focus{
+  outline: none;
+}
+#cancel:hover, #reserve:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform ease 0.5s;
+}
+@media (max-width: 425px) {
+  #buttons-container{
+    width: 260px;
+  }
+  #reserve, #cancel{
+    margin: 5px 0;
+  }
+}

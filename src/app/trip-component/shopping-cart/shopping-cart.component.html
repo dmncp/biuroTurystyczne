@@ -1,0 +1,36 @@
+<div id="main">
+  <div id="container">
+    <h2>Twój koszyk</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>Nazwa wycieczki, kierunek</th>
+        <th>Ilość</th>
+        <th>Łączna cena</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr *ngFor="let trip of userTrips">
+        <ng-container *ngIf="trip.reservedPlaces > 0">
+          <td>
+            {{getTripName(trip.tripKey)}}, {{getTripDestination(trip.tripKey)}}
+          </td>
+          <td>
+            {{trip.reservedPlaces}}
+          </td>
+          <td>
+            {{trip.reservedPlaces * getTripPrice(trip.tripKey)}}
+          </td>
+        </ng-container>
+      </tr>
+      <tr>
+        <td class="sum" colspan="2">Razem do zapłaty</td>
+        <td *ngIf="userTrips" class="sum">{{actualSum()}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

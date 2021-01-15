@@ -1,0 +1,33 @@
+<h1>Modyfikuj listę wycieczek</h1>
+
+<h2>Dodaj nową wycieczkę:</h2>
+<button (click)="addTripRoute()" id="addBtn">Dodaj</button>
+
+<h2>Lista wycieczek w bazie:</h2>
+
+<div id="trips-list">
+  <table>
+    <thead>
+    <tr>
+      <th>Tytuł wycieczki</th>
+      <th>ID</th>
+      <th class="options">Opcje</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trip of trips">
+        <td>
+          {{trip.tripTitle}}
+        </td>
+        <td>
+          {{trip.key}}
+        </td>
+        <td class="options">
+          <button *ngIf="authService.isLoggedIn && authService.actualUser !== undefined && authService.actualUser !== null && authService.actualUser.userType === 'admin'" id="delete" type="button" (click)="deleteTrip(trip.key)">Usuń</button>
+          <button id="edit" type="button" (click)="modifyTrip(trip)">Edytuj</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

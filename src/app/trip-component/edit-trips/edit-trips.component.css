@@ -1,0 +1,53 @@
+h1, h2{
+  text-align: center;
+}
+#addBtn{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: green;
+  width: 100px;
+  height: 40px;
+}
+#addBtn:hover{
+  background-color: #00a900;
+}
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table{
+  background-color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+th, td{
+  height: 30px;
+  padding: 5px 20px;
+}
+button{
+  width: 70px;
+  height: 30px;
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+}
+button:hover{
+  cursor: pointer;
+}
+.options{
+  width: 140px;
+}
+#edit{
+  background-color: darkblue;
+}
+#edit:hover{
+  background-color: #0000d6;
+}
+#delete{
+  background-color: darkred;
+}
+#delete:hover{
+  background-color: #d60101;
+}

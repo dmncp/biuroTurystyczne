@@ -1,0 +1,38 @@
+#container{
+  background-color: whitesmoke;
+  width: 80vw;
+  margin: 0 auto;
+}
+p, h2{
+  text-align: center;
+}
+p{
+  font-size: 20px;
+}
+h2{
+  font-size: 30px;
+}
+button{
+  background-color: red;
+  color: white;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: none
+}
+button:hover{
+  cursor: pointer;
+}
+a{
+  display: block;
+}
+@media(max-width:425px){
+  #uid{
+    display: block;
+    overflow-x: scroll;
+  }
+}

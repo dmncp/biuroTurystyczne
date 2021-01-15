@@ -1,0 +1,35 @@
+#star, #cover-star{
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  margin: 0 2px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+#starList, #covered-stars{
+  display: flex;
+  width: 145px;
+  margin: 0 auto;
+}
+span{
+  visibility: hidden;
+}
+#star:hover{
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  #starList, #covered-stars{
+    width: 145px;
+    margin: 0 auto 10px auto;
+  }
+}
+@media (max-width: 400px) {
+  #starList, #covered-stars{
+    position: relative;
+    top: 10%;
+  }
+}
+@media (max-width: 330px) {
+  #starList, #covered-stars{
+    top: 20%;
+  }
+}

@@ -1,0 +1,55 @@
+<h3>Modyfikuj wycieczkę</h3>
+<a [hidden]="submitted" routerLink="../../../edit" class="btn btn-primary active" role="button" routerLinkActive="active">←Wstecz</a>
+<div id="container" [hidden]="submitted">
+  <form [formGroup]="modelForm">
+    <div class="formElement">
+      <label for="title">Nazwa wycieczki:</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="tripDetails.tripTitle" name="title" formControlName="tripTitle">
+    </div>
+
+    <div class="formElement">
+      <label for="destination">Kierunek:</label>
+      <input formControlName="destination" type="text" class="form-control" id="destination" required [(ngModel)]="tripDetails.destination" name="destination">
+    </div>
+
+    <div class="formElement">
+      <label for="description">Opis:</label>
+      <textarea formControlName="description" type="text" class="form-control" id="description" required [(ngModel)]="tripDetails.description" name="description"></textarea>
+    </div>
+
+    <div class="formElement">
+      <label for="img">Zdjęcie</label>
+      <input formControlName="url" type="text" class="form-control" id="img" required [(ngModel)]="tripDetails.url" name="img">
+    </div>
+
+    <div class="formElement">
+      <label for="places">Ilość miejsc:</label>
+      <input formControlName="places" type="number" min="5" class="form-control" id="places" required [(ngModel)]="tripDetails.places" name="places">
+    </div>
+
+    <div class="formElement">
+      <label for="startDate">Data rozpoczęcia:</label>
+      <input formControlName="startDate" type="date" class="form-control" id="startDate" required [(ngModel)]="tripDetails.startDate" name="startDate">
+      <p *ngIf="!modelForm.controls['startDate'].valid && modelForm.controls['startDate'].touched">Wymagana data rozpoczęcia wycieczki późniejsza niż dzisiejsza data.</p>
+    </div>
+
+    <div class="formElement">
+      <label for="endDate">Data zakończenia:</label>
+      <input formControlName="endDate" type="date" class="form-control" id="endDate" required [(ngModel)]="tripDetails.endDate" name="endDate">
+      <p *ngIf="!modelForm.controls['endDate'].valid && modelForm.controls['endDate'].touched">Wymagana data zakończenia wycieczki póżniejsza niż data rozpoczęcia.</p>
+    </div>
+
+    <div class="formElement">
+      <label for="price">Cena:</label>
+      <input formControlName="price" type="number" min="100" class="form-control" id="price" required [(ngModel)]="tripDetails.price" name="startDate">
+    </div>
+
+    <button (click)="onSubmit()" type="button" class="btn btn-success" [disabled]="!modelForm.valid">Edytuj</button>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h3>Wycieczka zmodyfikowana prawidłowo</h3>
+  <a id="goBack" routerLink="../../../edit" class="btn btn-primary active" role="button" routerLinkActive="active">Wróć do trybu edycji</a>
+</div>

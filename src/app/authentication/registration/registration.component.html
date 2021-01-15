@@ -1,0 +1,15 @@
+<form [formGroup]="modelForm">
+  <h2>Załóż konto</h2>
+  <ng-container>
+    <label for="email">Adres email:</label>
+    <input type="email" id="email" name="email" required formControlName="email" [(ngModel)]="email">
+    <p *ngIf="!modelForm.controls['email'].valid && modelForm.controls['email'].touched">Podaj poprawny adres email </p>
+  </ng-container>
+  <ng-container>
+    <label for="password">Hasło:</label>
+    <input [(ngModel)]="password" formControlName="password" type="password" id="password" name="password" required>
+    <p *ngIf="!modelForm.controls['password'].valid && modelForm.controls['password'].touched">Hasło musi mieć długość min 6 znaków</p>
+  </ng-container>
+  <button type="submit" [disabled]="!modelForm.valid" (click)="save()">Załóż konto</button>
+  <div id="goBack"><a routerLink="../../signIn" class="btn btn-primary active" role="button" routerLinkActive="active"><- Wróć</a></div>
+</form>

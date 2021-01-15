@@ -1,0 +1,8 @@
+<h1>Lista wycieczek</h1>
+<app-filters [prices]="prices()" (sendFilters)="receiveFilters($event)"></app-filters>
+<div id="tripsList">
+  <ng-container *ngFor="let trip of (trips | searchLocationPipe: filters[0] | datePipe: filters[1]: filters[2] | numberPipe: filters[3]: filters[4] | numberPipe: filters[5]: filters[6] | userTripsPipe: authService.actualUser)">
+    <app-trip-details [trip]="trip" [prices]="prices()"></app-trip-details>
+  </ng-container>
+</div>
+

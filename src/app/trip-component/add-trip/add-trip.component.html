@@ -1,0 +1,61 @@
+<h3>Dodaj nową wycieczkę</h3>
+<a [hidden]="submitted" routerLink="../../edit" class="btn btn-primary active" role="button" routerLinkActive="active">←Wstecz</a>
+
+<div id="container" [hidden]="submitted">
+  <form (ngSubmit)="onSubmit()" [formGroup]="modelForm">
+    <div class="formElement">
+      <label for="title">Nazwa wycieczki</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="trip.tripTitle" name="title" formControlName="tripTitle">
+      <p *ngIf="!modelForm.controls['tripTitle'].valid && modelForm.controls['tripTitle'].touched">Nazwa wycieczki musi mieć długość co najmniej 3 znaków. </p>
+    </div>
+
+    <div class="formElement">
+      <label for="destination">Kierunek</label>
+      <input formControlName="destination" type="text" class="form-control" id="destination" required [(ngModel)]="trip.destination" name="destination">
+      <p *ngIf="!modelForm.controls['destination'].valid && modelForm.controls['destination'].touched">Kierunek wycieczki musi mieć długość co najmniej 3 znaków. </p>
+    </div>
+
+    <div class="formElement">
+      <label for="description">Opis</label>
+      <textarea formControlName="description" type="text" class="form-control" id="description" required [(ngModel)]="trip.description" name="description"></textarea>
+      <p *ngIf="!modelForm.controls['description'].valid && modelForm.controls['description'].touched">Wymagany opis o długości minimum 10 znaków.</p>
+    </div>
+
+    <div class="formElement">
+      <label for="img">Zdjęcie</label>
+      <input formControlName="url" type="text" class="form-control" id="img" required [(ngModel)]="trip.url" name="img">
+    </div>
+
+    <div class="formElement">
+      <label for="places">Ilość miejsc</label>
+      <input formControlName="places" type="number" min="5" class="form-control" id="places" required [(ngModel)]="trip.places" name="places">
+      <p *ngIf="!modelForm.controls['places'].valid && modelForm.controls['places'].touched">Wymagana ilość miejsc.</p>
+    </div>
+
+    <div class="formElement">
+      <label for="startDate">Data rozpoczęcia</label>
+      <input formControlName="startDate" type="date" class="form-control" id="startDate" required [(ngModel)]="trip.startDate" name="startDate">
+      <p *ngIf="!modelForm.controls['startDate'].valid && modelForm.controls['startDate'].touched">Wymagana data rozpoczęcia wycieczki późniejsza niż dzisiejsza data.</p>
+    </div>
+
+    <div class="formElement">
+      <label for="endDate">Data zakończenia</label>
+      <input formControlName="endDate" type="date" class="form-control" id="endDate" required [(ngModel)]="trip.endDate" name="endDate">
+      <p *ngIf="!modelForm.controls['endDate'].valid && modelForm.controls['endDate'].touched">Wymagana data zakończenia wycieczki póżniejsza niż data rozpoczęcia.</p>
+    </div>
+
+    <div class="formElement">
+      <label for="price">Cena</label>
+      <input formControlName="price" type="number" min="100" class="form-control" id="price" required [(ngModel)]="trip.price" name="startDate">
+      <p *ngIf="!modelForm.controls['price'].valid && modelForm.controls['price'].touched">Wymagana cena wycieczki.</p>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!modelForm.valid">Dodaj</button>
+
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Wycieczka dodana prawidłowo</h4>
+  <button class="btn-success" (click)="newTrip()">Dodaj</button>
+</div>

@@ -1,0 +1,20 @@
+h1{
+  font-weight: bold;
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
+#tripsList{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+@media (max-width: 1200px) {
+  #tripsList{
+    grid-template-columns: 50% 50%;
+  }
+}
+@media (max-width: 900px) {
+  #tripsList{
+    grid-template-columns: 100%;
+  }
+}

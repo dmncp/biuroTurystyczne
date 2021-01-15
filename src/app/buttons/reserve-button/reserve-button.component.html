@@ -1,0 +1,10 @@
+<div id="buttons-container">
+  <ng-container *ngIf="reserveDisab() === false">
+    <button (click)="clicker()" id="reserve">Zarezerwuj</button>
+  </ng-container>
+  <ng-container *ngIf="resignDisab() === true">
+    <button (click)="resign()" id="cancel">Zrezygnuj</button>
+  </ng-container>
+</div>
+
+

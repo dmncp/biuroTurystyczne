@@ -1,0 +1,51 @@
+<a routerLink="../../dashboard" class="btn btn-primary active" role="button" routerLinkActive="active">Wróć</a>
+<div id="main-container">
+  <div id="persistence">
+    <p>Zmień stan uwierzytelniania</p>
+
+    <div id="btn-container">
+      <button (click)="choosePersistence('local')" class="session-type">LOCAL</button>
+      <button (click)="choosePersistence('session')" class="session-type">SESSION</button>
+      <button (click)="choosePersistence('none')" class="session-type">NONE</button>
+    </div>
+
+    <p>Aktualnie wybrany: <strong>{{option}}</strong></p>
+  </div>
+
+  <div id="users-list">
+    <p>Lista użytkowników</p>
+    <table style="table-layout:fixed; width: 100%;">
+      <thead>
+      <tr>
+        <th>Email</th>
+        <th>ID</th>
+        <th>Rola</th>
+        <th>Zmień rolę</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td id="email">
+          {{user.email}}
+        </td>
+        <td style="overflow: scroll">
+          {{user.uid}}
+        </td>
+        <td>
+          {{user.userType}}
+        </td>
+        <td>
+          <select (change)="roleActualization($event.target)" name="choose-role" id="choose-role">
+            <option [selected]="user.userType === 'admin'" value="admin">admin</option>
+            <option [selected]="user.userType === 'Reader'" value="Reader">customer</option>
+            <option [selected]="user.userType === 'pracownik'" value="pracownik">employee</option>
+            <option [selected]="user.userType === 'VIP'" value="VIP">VIP</option>
+          </select>
+          <button (click)="choose(user)" type="submit" style="font-size: 20px; margin-left: 5px">Zmień</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,10 @@
+<h2>Profil użytkownika</h2>
+<div id="container" *ngIf="authService.actualUser as user">
+  <p>Email: <strong>{{user.email}}</strong></p>
+  <p>Rodzaj użytkownika: <strong>{{user.userType}}</strong></p>
+  <p>ID użytkownika: <strong id="uid">{{user.uid}}</strong></p>
+  <button (click)="authService.SignOut()">Wyloguj</button>
+  <ng-container *ngIf="user.userType === 'admin'">
+    <a routerLink="adminSettings" class="btn btn-primary active" role="button" routerLinkActive="active">Ustawienia dodatkowe</a>
+  </ng-container>
+</div>

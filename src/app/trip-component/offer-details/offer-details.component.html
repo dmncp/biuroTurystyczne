@@ -1,0 +1,26 @@
+<div id="container">
+  <img src="{{tripDetails.url}}">
+
+  <h2 id="title">{{tripDetails.tripTitle | uppercase}}</h2>
+
+  <h3 id="destination">{{tripDetails.destination | uppercase}}</h3>
+
+  <app-star-rating [trip]="tripDetails"></app-star-rating>
+
+  <p id="date">
+    {{tripDetails.startDate}} - {{tripDetails.endDate}}
+  </p>
+
+  <div id="description">{{tripDetails.description}}</div>
+
+  <p id="places">
+    Wolnych miejsc: <span>{{tripDetails.places - tripDetails.reservedPlaces}}/{{tripDetails.places}}</span>
+  </p>
+
+  <p id="price">Cena za osobę: <span>{{tripDetails.price}} PLN</span></p>
+
+  <div id="buttons-container">
+    <app-reserve-button [trip]="tripDetails"></app-reserve-button>
+  </div>
+  <a routerLink="../../../tripsList" class="btn btn-primary active" role="button" routerLinkActive="active">Wróć</a>
+</div>

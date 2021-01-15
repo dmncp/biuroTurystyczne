@@ -1,0 +1,58 @@
+.session-type{
+  width: 80px;
+  font-size: 15px;
+  font-weight: bold;
+  height: 30px;
+  margin: 0 10px;
+}
+#persistence, #users-list{
+  background-color: whitesmoke;
+  font-size: 20px;
+  box-shadow: 5px 5px 5px gray;
+  margin: 0 auto;
+  width: 60vw;
+}
+
+p{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+#btn-container{
+  margin: 0 auto;
+  width: 300px;
+}
+#users-list{
+  padding: 20px;
+}
+table, th, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table{
+  background-color: white;
+  width: 40vw;
+  text-align: center;
+}
+select{
+  font-size: 20px;
+}
+button{
+  background-color: darkblue;
+  color: white;
+  border-radius: 7px;
+}
+button:hover{
+  background-color: #0000d6;
+  cursor: pointer;
+}
+@media(max-width:1150px){
+  #persistence, #users-list{
+    width: 90vw;
+  }
+}
+@media(max-width:770px){
+  #email{
+    overflow: scroll;
+  }
+}

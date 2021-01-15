@@ -1,0 +1,23 @@
+<div id="container">
+  <app-mobile-menu></app-mobile-menu>
+  <nav id="desktopView">
+    <ul id="desktopMenu">
+      <li><a routerLink="tripsList" class="btn btn-primary active" role="button" routerLinkActive="active">Lista wycieczek</a></li>
+      <li><a routerLink="shoppingCart" class="btn btn-primary active" role="button" routerLinkActive="active">Koszyk</a></li>
+      <li *ngIf="authService.isLoggedIn && authService.actualUser !== undefined && authService.actualUser !== null && (authService.actualUser.userType === 'admin' || authService.actualUser.userType === 'pracownik')">
+        <a routerLink="edit" class="btn btn-primary active" role="button" routerLinkActive="active">Edytuj wycieczki</a>
+      </li>
+      <li *ngIf="!authService.isLoggedIn">
+        <a routerLink="signIn" class="btn btn-primary active" role="button" routerLinkActive="active">Logowanie</a>
+      </li>
+      <li *ngIf="authService.isLoggedIn">
+        <a (click)="logOut()">Wyloguj</a>
+      </li>
+      <div *ngIf="authService.isLoggedIn" id="userDesc" routerLink="dashboard" class="btn btn-primary active" role="button" routerLinkActive="active">
+        <p class="fa fa-user" aria-hidden="true"></p>
+        <p>Profil</p>
+      </div>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
