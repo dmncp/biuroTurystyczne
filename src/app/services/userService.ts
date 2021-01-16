@@ -16,7 +16,7 @@ export class UserService{
 
   createUser(user: User): void{
     this.users.push({uid: user.uid, email: user.email,
-      reservedTrips: [{tripKey: 'test', reservedPlaces: 0, rate: 0}], trips: ['test'], userType: 'klient'});
+      reservedTrips: [{tripKey: 'test', reservedPlaces: 0, rate: 0}], trips: ['test'], userType: 'Reader'});
   }
   updateUser(key: string, value: any): void{
     this.users.update(key, value);
