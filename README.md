@@ -1,6 +1,23 @@
-# WycieczkiV2
+# Travel Agency
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+
+
+## App overview
+
+https://dmncp.github.io/biuroTurystyczne/tripsList
+
+
+## Description
+
+Travel agency project. The user can create an account or log in, view any of the offers, make reservations (add to the shopping cart) and view their profile. The project includes a hierarchical system of users: administrator, employee, VIP client and regular client. Administrator and employee can edit each of the offers and add new ones. The administrator can additionally manage user accounts and delete tours. The VIP customer can, unlike the regular customer, view archived offers or those unavailable due to lack of places.
+
+
+## Technologies
+
+* Angular
+* Google Firebase
+
 
 ## Development server
 
